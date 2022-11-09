@@ -9,6 +9,7 @@ export default defineConfig({
   base: '/',
 
   themeConfig: {
+    siteTitle: `ZzH's Log`,
     logo: '/favicon.ico',
     algolia: {
       appId: 'KFDE6WX025',
