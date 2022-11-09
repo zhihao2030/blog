@@ -9,6 +9,7 @@ export default defineConfig({
   base: '/',
 
   themeConfig: {
+    logo: '/favicon.ico',
     algolia: {
       appId: 'KFDE6WX025',
       apiKey: '1921e3dd751514552b76ac8dd28ece9a',
