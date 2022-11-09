@@ -1,12 +1,12 @@
 import { defineConfig } from 'vitepress';
 
 export default defineConfig({
-  title: "Alvin's note",
-  description: 'Peace and love...',
+  title: "Zzh's note",
+  description: '~',
   lastUpdated: true,
 
   // @ts-ignore
-  base: process?.env.KEY === 'gh-pages' ? '/note/' : undefined,
+  base: '/',
 
   themeConfig: {
     algolia: {
@@ -304,15 +304,10 @@ export default defineConfig({
         },
       ],
     },
-    editLink: {
-      pattern: 'https://github.com/alvin0216/note//blob/master/docs/:path',
-      text: 'Edit this page on GitHub',
-    },
-    socialLinks: [{ icon: 'github', link: 'https://github.com/alvin0216/note/blob/master' }],
 
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2019-present Alvin',
+      copyright: 'Copyright © 2019-present Zzh',
     },
   },
 });
