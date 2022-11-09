@@ -7,6 +7,7 @@ export default defineConfig({
 
   // @ts-ignore
   base: '/',
+
   head:[
     ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
