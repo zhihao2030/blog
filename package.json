@@ -1,14 +1,12 @@
 {
-  "name": "note",
+  "name": "blog",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
-    "build:gh-pages": "cross-env KEY=gh-pages vitepress build docs",
-    "serve": "vitepress serve docs",
-    "push": "node push.js"
+    "serve": "vitepress serve docs"
   },
   "author": "",
   "license": "ISC",
