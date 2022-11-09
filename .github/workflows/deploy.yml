@@ -24,11 +24,11 @@ jobs:
       - name: Build
         run: pnpm run build:gh-pages
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/.vitepress/dist
+      #- name: Deploy
+        #uses: peaceiris/actions-gh-pages@v3
+        #with:
+       #   github_token: ${{ secrets.GITHUB_TOKEN }}
+      #    publish_dir: docs/.vitepress/dist
 
       - name: Build
         run: pnpm run build
@@ -38,7 +38,7 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_PRIVATE_KEY }}
           ARGS: "-avz --delete"
-          SOURCE: "/docs/.vitepress/dist"
+          SOURCE: "docs/.vitepress/dist"
           REMOTE_HOST: ${{ secrets.SERVER_HOST }}
           REMOTE_USER: ${{ secrets.USER_NAME }}
           TARGET: ${{ secrets.TARGET }}
