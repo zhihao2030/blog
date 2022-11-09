@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vitepress dev docs",
-    "build": "vitepress build docs",
+    "dev": "node getPages.mjs && vitepress dev docs",
+    "build": "node collect-article-data.mjs && vitepress build docs",
     "serve": "vitepress serve docs"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cross-env": "^7.0.3",
+    "gray-matter": "^4.0.3",
+    "remove-markdown": "^0.5.0",
     "vitepress": "^1.0.0-alpha.13",
     "vue": "^3.2.38"
   },
@@ -21,5 +23,8 @@
         "@algolia/client-search"
       ]
     }
+  },
+  "devDependencies": {
+    "fast-glob": "^3.2.12"
   }
 }
