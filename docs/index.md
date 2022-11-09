@@ -1,8 +1,8 @@
 ---
 layout: home
 
-title: VitePress
-titleTemplate: Vite & Vue Powered Static Site Generator
+title: ZzH's Log
+titleTemplate: ...
 
 hero:
   name: VitePress

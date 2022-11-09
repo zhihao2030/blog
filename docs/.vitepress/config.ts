@@ -7,10 +7,11 @@ export default defineConfig({
 
   // @ts-ignore
   base: '/',
-
+  head:[
+    ['link', { rel: 'icon', href: '/favicon.ico' }]
+  ],
   themeConfig: {
     siteTitle: `ZzH's Log`,
-    logo: '/favicon.ico',
     algolia: {
       appId: 'KFDE6WX025',
       apiKey: '1921e3dd751514552b76ac8dd28ece9a',
@@ -306,7 +307,6 @@ export default defineConfig({
         },
       ],
     },
-
     footer: {
       message: 'Released under the MIT License.',
       copyright: 'Copyright © 2019-present Zzh',
