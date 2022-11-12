@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@ant-design/icons-vue": "^6.1.0",
-    "ant-design-vue": "^3.2.15",
+    "@arco-design/web-vue": "^2.38.3",
     "cross-env": "^7.0.3",
     "gray-matter": "^4.0.3",
     "moment": "^2.29.4",
