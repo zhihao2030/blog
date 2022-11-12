@@ -1,3 +1,6 @@
+import moment from 'moment'
+moment.locale('zh-cn')
+
 export const hashRE = /#.*$/
 export const extRE = /\.(md|html)$/
 export const endingSlashRE = /\/$/
@@ -173,29 +176,29 @@ export function resolveMatchingConfig (regularPath, config) {
   return {}
 }
 
-export function formatDate (time, fmt = 'yyyy-MM-dd hh:mm:ss') {
-  time = time.replace(/-/g, '/')
-  const date = new Date(time)
-  if (/(y+)/.test(fmt)) {
-    fmt = fmt.replace(RegExp.$1, date.getFullYear() + '').substr(4 - RegExp.$1.length)
-  }
-
-  const o = {
-    'M+': date.getMonth() + 1,
-    'd+': date.getDate(),
-    'h+': date.getHours(),
-    'm+': date.getMinutes(),
-    's+': date.getSeconds()
-  }
-
-  for (const key in o) {
-    if (RegExp(`(${key})`).test(fmt)) {
-      const str = o[key] + ''
-      fmt = fmt.replace(RegExp.$1, str.length === 2 ? str : '0' + str)
-    }
-  }
-  return fmt
-}
+// export function formatDate (time, fmt = 'yyyy-MM-dd hh:mm:ss') {
+//   time = time.replace(/-/g, '/')
+//   const date = new Date(time)
+//   if (/(y+)/.test(fmt)) {
+//     fmt = fmt.replace(RegExp.$1, date.getFullYear() + '').substr(4 - RegExp.$1.length)
+//   }
+//
+//   const o = {
+//     'M+': date.getMonth() + 1,
+//     'd+': date.getDate(),
+//     'h+': date.getHours(),
+//     'm+': date.getMinutes(),
+//     's+': date.getSeconds()
+//   }
+//
+//   for (const key in o) {
+//     if (RegExp(`(${key})`).test(fmt)) {
+//       const str = o[key] + ''
+//       fmt = fmt.replace(RegExp.$1, str.length === 2 ? str : '0' + str)
+//     }
+//   }
+//   return fmt
+// }
 
 // 获取时间的数字类型
 export function getTimeNum (date) {
@@ -261,5 +264,36 @@ function resolveItem (item, pages, base, groupDepth = 1) {
       children: children.map(child => resolveItem(child, pages, base, groupDepth + 1)),
       collapsable: item.collapsable !== false
     }
+  }
+}
+
+export function formatDate(date) {
+  return moment(date).format('YYYY-MM-DD HH:mm:ss')
+}
+
+/**
+ * 获取URL路径中的指定参数
+ * @param paramName 参数名
+ * @returns 参数值
+ */
+export function getQueryParam(paramName) {
+  const reg = new RegExp("(^|&)"+ paramName +"=([^&]*)(&|$)")
+  let value = decodeURIComponent(window.location.search.substr(1)).match(reg)
+  if (value != null) {
+    return unescape(value[2])
+  }
+  return null
+}
+
+/**
+ * 跳转到指定链接
+ * @param paramName 参数名
+ * @param paramValue 参数值
+ */
+export function goToLink(url, paramName, paramValue) {
+  if (paramName) {
+    window.location.href = url + '?' + paramName + '=' + paramValue
+  } else {
+    window.location.href = url
   }
 }

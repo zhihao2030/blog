@@ -1,18 +1,45 @@
 import { defineConfig } from 'vitepress';
-
+// @ts-ignore
 export default defineConfig({
   title: "Zzh's note",
   description: '~',
   lastUpdated: true,
-
-  // @ts-ignore
   base: '/',
-
+  lang: 'zh-CN',
   head:[
     ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
+  markdown:{
+    // Shiki主题, 所有主题参见: https://github.com/shikijs/shiki/blob/main/docs/themes.md
+    theme: {
+      light: 'material-palenight',
+      dark: 'one-dark-pro'
+    },
+    // lineNumbers: true, // 启用行号
+
+    // 在所有文档的<h1>标签后添加<ArticleMetadata/>组件
+    config: (md) => {
+      md.renderer.rules.heading_close = (tokens, idx, options, env, slf) => {
+        let htmlResult = slf.renderToken(tokens, idx, options, env, slf)
+        if (tokens[idx].tag === 'h1') htmlResult += `\n<ClientOnly><ArticleInfo v-if="($frontmatter?.aside ?? true) && ($frontmatter?.showArticleMetadata ?? true)" :article="$frontmatter" /></ClientOnly>`
+        return htmlResult
+      }
+    }
+  },
   themeConfig: {
     siteTitle: `ZzH's Log`,
+    outlineTitle: '目录', // 右侧边栏的大纲标题文本配置
+    lastUpdatedText: '最后更新', // 最后更新时间文本配置, 需先配置lastUpdated为true
+    // @ts-ignore
+    outline: 'deep',
+    authorInfo: {
+      author: 'ZzH'
+    },
+    // 文档页脚文本配置
+    docFooter: {
+      prev: '上一篇',
+      next: '下一篇'
+    },
     nav: [
       { text: 'Home', link: '/others/',activeMatch: '/others/' },
       { text: 'Javascript', link: '/javascript/' ,activeMatch: '/javascript/'},
@@ -311,6 +338,6 @@ export default defineConfig({
     footer: {
       message: 'Released under the MIT License.',
       copyright: 'Copyright © 2019-present Zzh',
-    },
+    }
   },
 });

@@ -4,6 +4,7 @@ import Theme from 'vitepress/theme'
 import myLayout from './myLayout.vue'
 import registerPlugin from './plugin'
 import { initTags } from './helpers/other'
+import './styles/commom.css'
 
 export default {
     ...Theme,

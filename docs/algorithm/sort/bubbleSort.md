@@ -1,5 +1,6 @@
 ---
 title: 冒泡排序
+author: 查尔斯
 date: 2020-05-19 15:05:55
 sidebar: auto
 tags:

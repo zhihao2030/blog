@@ -21,7 +21,7 @@ const articleData = await Promise.all(
         return {
             ...data,
             date: formatDate,
-            path: path.replace(/\.md$/, '.html').replace('./docs/', '/'),
+            path: path.replace(/\.md$/, '').replace('./docs/', ''),
             excerpt: contents.slice(1).join('').replace(/\s{2,}/g, '').trim()
         }
     })
