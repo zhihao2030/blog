@@ -66,3 +66,22 @@ export function fixRouterError404 (router) {
     next()
   })
 }
+
+export function initTags(articleData) {
+  const tags =  {}
+  for (let i = 0; i < articleData.length; i++) {
+    const article = articleData[i]
+    const articleTags = article.tags
+    if (Array.isArray(articleTags)) {
+      articleTags.forEach((articleTag) => {
+        if (!tags[articleTag]) {
+          tags[articleTag] = []
+        }
+        tags[articleTag].push(article)
+        // 文章按发布时间降序排序
+        tags[articleTag].sort((a, b) => b.date && b.date.localeCompare(a.date))
+      })
+    }
+  }
+  return tags
+}

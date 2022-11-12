@@ -2,6 +2,8 @@ import glob  from 'fast-glob'
 import matter from 'gray-matter'
 import fs from 'node:fs/promises'
 import removeMd from 'remove-markdown'
+import moment from 'moment'
+moment.locale('zh-cn')
 
 const articleData = await Promise.all(
     glob.sync('./docs/**/*.md', {
@@ -14,14 +16,20 @@ const articleData = await Promise.all(
             excerpt_separator: '<!-- more -->'
         })
         const { data, excerpt, path } = file
+        console.log(file)
+        const formatDate = data.date ? moment(data.date).format('YYYY-MM-DD HH:mm:ss') : 'xxx'
         const contents = removeMd(excerpt).trim().split(/\r\n|\n|\r/)
         return {
             ...data,
-            title: contents[0].replace(/\s{2,}/g, '').trim(),
+            date: formatDate,
             path: path.replace(/\.md$/, '.html').replace('./docs/', '/'),
             excerpt: contents.slice(1).join('').replace(/\s{2,}/g, '').trim()
         }
     })
 )
 
-await fs.writeFile('./article-data.json', JSON.stringify(articleData), 'utf-8')
+function sortByTime(posts) {
+    return posts.sort((a, b) => b.date && b.date.localeCompare(a.date))
+}
+
+await fs.writeFile('./article-data.json', JSON.stringify(sortByTime(articleData)), 'utf-8')
