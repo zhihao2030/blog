@@ -16,7 +16,6 @@ const articleData = await Promise.all(
             excerpt_separator: '<!-- more -->'
         })
         const { data, excerpt, path } = file
-        console.log(file)
         const formatDate = data.date ? moment(data.date).format('YYYY-MM-DD HH:mm:ss') : 'xxx'
         const contents = removeMd(excerpt).trim().split(/\r\n|\n|\r/)
         return {

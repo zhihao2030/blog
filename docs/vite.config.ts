@@ -10,8 +10,10 @@ export default defineConfig({
         //}),
         Components({
             dirs: ['.vitepress/theme/components'],
+            deep: true,
             include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-            resolvers: [AntDesignVueResolver()]
+                resolvers: [AntDesignVueResolver()]
         })
     ],
+    ssr: { noExternal: ['ant-design-vue','@ant-design/icons-vue'] }
 })

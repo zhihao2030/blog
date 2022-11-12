@@ -13,19 +13,19 @@ export default defineConfig({
   ],
   themeConfig: {
     siteTitle: `ZzH's Log`,
-    algolia: {
-      appId: 'KFDE6WX025',
-      apiKey: '1921e3dd751514552b76ac8dd28ece9a',
-      indexName: 'note',
-    },
     nav: [
-      { text: 'Home', link: '/others/' },
-      { text: 'Javascript', link: '/javascript/' },
-      { text: '网络协议', link: '/network-protocol/' },
-      { text: '工程化', link: '/devops/' },
-      { text: '浏览器', link: '/browser/' },
-      { text: '算法', link: '/algorithm/' },
-      { text: 'React', link: '/react/' },
+      { text: 'Home', link: '/others/',activeMatch: '/others/' },
+      { text: 'Javascript', link: '/javascript/' ,activeMatch: '/javascript/'},
+      { text: '网络协议', link: '/network-protocol/',activeMatch: '/network-protocol/' },
+      { text: '工程化', link: '/devops/' ,activeMatch: '/devops/'},
+      { text: '浏览器', link: '/browser/' ,activeMatch: '/browser/'},
+      { text: '算法', link: '/algorithm/' ,activeMatch: '/algorithm/'},
+      { text: 'React', link: '/react/' ,activeMatch: '/react/'},
+      {
+        text: '分类',
+        link: '/tags',
+        activeMatch: '/tags'
+      },
     ],
     sidebar: {
       '/others/': [
