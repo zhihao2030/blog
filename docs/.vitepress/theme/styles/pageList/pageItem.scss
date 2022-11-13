@@ -2,7 +2,7 @@
   margin-bottom: 40px;
 }
 .card {
-  background-color: #FFF;
+  background-color: var(--vp-c-bg-alt);
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 20px 50px 0 rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   overflow: hidden;
@@ -40,7 +40,7 @@
   font-weight: 600;
   margin-bottom: 5px;
   text-decoration: none;
-  color: inherit;
+  color: var(--vp-c-text-1);
   &:hover {
     color: #1890ff;
   }
@@ -113,6 +113,7 @@
   margin-inline-end: 0px;
   p {
     display: block;
+    color: var(--vp-c-text-2);
 
   }
 }
