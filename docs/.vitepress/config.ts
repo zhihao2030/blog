@@ -20,6 +20,7 @@ export default defineConfig({
     // 在所有文档的<h1>标签后添加<ArticleMetadata/>组件
     config: (md) => {
       md.renderer.rules.heading_close = (tokens, idx, options, env, slf) => {
+        // @ts-ignore
         let htmlResult = slf.renderToken(tokens, idx, options, env, slf)
         if (tokens[idx].tag === 'h1') htmlResult += `\n<ClientOnly><ArticleInfo v-if="($frontmatter?.aside ?? true) && ($frontmatter?.showArticleMetadata ?? true)" :article="$frontmatter" /></ClientOnly>`
         return htmlResult

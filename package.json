@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node getPages.mjs && vitepress dev docs",
     "build": "node getPages.mjs && vitepress build docs",
-    "serve": "vitepress serve docs"
+    "serve": "vitepress serve docs",
+    "start:md": "node generateMd.mjs"
   },
   "author": "",
   "license": "ISC",

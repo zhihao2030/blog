@@ -1,0 +1,19 @@
+import fs from 'node:fs/promises'
+import moment from 'moment'
+moment.locale('zh-cn')
+
+const str = `---
+title: -
+date: ${moment().format('YYYY-MM-DD HH:mm:ss')}
+sidebar: auto
+author: Zzh
+tags:
+  - tag1
+categories:
+  - categories
+---
+description：-
+# 文章标题
+`
+
+await fs.writeFile('./template.md',str)
