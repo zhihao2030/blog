@@ -5,10 +5,10 @@ import { SearchPlugin } from 'vitepress-plugin-search'
 
 export default defineConfig({
     plugins: [
-        SearchPlugin({
-        encode: false,
-        tokenize: 'full'
-        }),
+        // SearchPlugin({
+        // encode: false,
+        // tokenize: 'full'
+        // }),
         Components({
             dirs: ['.vitepress/theme/components'],
             include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
