@@ -34,6 +34,7 @@ onMounted(()=>{
     flex-direction: column;
     max-width: 998px;
     margin: 30px auto 0;
+    padding: 0 50px;
     .pagination-wrap {
       display: flex;
       justify-content: end;

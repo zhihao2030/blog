@@ -19,10 +19,10 @@ export default function usePageList() {
     })
 
     const toTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+        // window.scrollTo({
+        //     top: 0,
+        //     behavior: "smooth"
+        // });
     }
 
     // 监听总数量
