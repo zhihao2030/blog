@@ -5,6 +5,7 @@ import removeMd from 'remove-markdown'
 import moment from 'moment'
 moment.locale('zh-cn')
 
+console.log('Start building PageData..')
 const articleData = await Promise.all(
     glob.sync('./docs/**/*.md', {
         onlyFiles: true,
@@ -31,4 +32,6 @@ function sortByTime(posts) {
     return posts.sort((a, b) => b.date && b.date.localeCompare(a.date))
 }
 
-await fs.writeFile('./article-data.json', JSON.stringify(sortByTime(articleData)), 'utf-8')
+await fs.writeFile('article-data.json', JSON.stringify(sortByTime(articleData)), 'utf-8')
+
+console.log('End building PageData..')

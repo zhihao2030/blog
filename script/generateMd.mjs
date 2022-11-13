@@ -16,4 +16,4 @@ description：-
 # 文章标题
 `
 
-await fs.writeFile('./template.md',str)
+await fs.writeFile('../template.md',str)
