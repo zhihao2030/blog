@@ -38,6 +38,7 @@ onMounted(()=>{
     .pagination-wrap {
       display: flex;
       justify-content: end;
+      padding-bottom: 20px;
     }
   }
 }
