@@ -52,7 +52,7 @@ const props = defineProps({
     default: true
   }
 })
-
+console.log(props.article)
 const { theme } = useData()
 const data = reactive({
   author: props.article?.author ?? theme.value.authorInfo.author,
