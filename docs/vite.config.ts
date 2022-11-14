@@ -4,6 +4,7 @@ import { ArcoResolver } from 'unplugin-vue-components/resolvers';
 import { SearchPlugin } from 'vitepress-plugin-search'
 
 export default defineConfig({
+
     plugins: [
         // SearchPlugin({
         // encode: false,

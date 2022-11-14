@@ -2,6 +2,7 @@ import fs from 'node:fs/promises'
 import moment from 'moment'
 moment.locale('zh-cn')
 
+console.log('start markdown')
 const str = `---
 title: -
 date: ${moment().format('YYYY-MM-DD HH:mm:ss')}

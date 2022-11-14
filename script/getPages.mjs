@@ -35,3 +35,4 @@ function sortByTime(posts) {
 await fs.writeFile('article-data.json', JSON.stringify(sortByTime(articleData)), 'utf-8')
 
 console.log('End building PageData..')
+
