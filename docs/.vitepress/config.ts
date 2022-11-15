@@ -6,6 +6,7 @@ export default defineConfig({
   lastUpdated: true,
   base: '/',
   lang: 'zh-CN',
+  cleanUrls: 'without-subfolders',
   head:[
     ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
