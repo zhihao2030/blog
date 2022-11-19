@@ -3,6 +3,8 @@ import markdownConfig from './config/markdown'
 import headConfig from "./config/head";
 import navConfig from './config/nav'
 import sidebarConfig from './config/sidebar'
+import selfPlugin from './config/selfPlugin'
+
 
 // @ts-ignore
 export default defineConfig({
@@ -33,6 +35,7 @@ export default defineConfig({
     footer: {
       message: 'Released under the MIT License.',
       copyright: 'Copyright © 2019-present Zzh',
-    }
+    },
+    selfPlugin
   },
 });

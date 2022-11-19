@@ -20,3 +20,11 @@ pre, code, kbd, samp {
 .VPHome {
   padding-bottom: 0 !important;
 }
+
+/*medium-zoom*/
+.medium-zoom--opened .medium-zoom-overlay {
+  z-index: 999;
+}
+.medium-zoom-image.medium-zoom-image--opened {
+  z-index: 1000;
+}

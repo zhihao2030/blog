@@ -14,6 +14,11 @@ const markdownConfig = {
             if (tokens[idx].tag === 'h1') htmlResult += `\n<ClientOnly><ArticleInfo v-if="($frontmatter?.aside ?? true) && ($frontmatter?.showArticleMetadata ?? true)" :article="$frontmatter" /></ClientOnly>`
             return htmlResult
         }
+        md.renderer.rules.image = (tokens, idx, options, env, slf) => {
+            // @ts-ignore
+            let htmlResult = slf.renderToken(tokens, idx, options, env, slf)
+            return htmlResult.replace('>', ' data-zoomable>');
+        }
     }
 }
 export default markdownConfig

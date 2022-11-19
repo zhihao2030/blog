@@ -10,8 +10,11 @@
 
 <script lang="ts" setup>
 import DefaultTheme from 'vitepress/theme'
+import useMediumZoom from './hooks/useMediumZoom.js'
+
 
 const { Layout } = DefaultTheme
+useMediumZoom()
 
 </script>
 
