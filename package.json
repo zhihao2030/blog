@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node script/generateSitemap.js && node script/getPages.mjs && vitepress dev docs",
-    "build": "node script/generateSitemap.js && node script/getPages.mjs  && vitepress build docs",
+    "dev": "node script/getPages.mjs && vitepress dev docs",
+    "build": "node script/getPages.mjs  && vitepress build docs",
     "serve": "vitepress serve docs",
     "start:md": "node script/generateMd.mjs"
   },
