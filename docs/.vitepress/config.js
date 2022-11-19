@@ -25,6 +25,9 @@ export default defineConfig({
     authorInfo: {
       author: 'ZzH'
     },
+    commentConfig: {
+      showComment: true
+    },
     // 文档页脚文本配置
     docFooter: {
       prev: '上一篇',
