@@ -31,7 +31,7 @@ const gitalk = new Gitalk({
     repo: 'comment',
     owner: 'zhihao2030',
     admin: ['zhihao2030'],
-    id: getKey(),
+    id: location.pathname.substr(0, 50),
     language: 'zh-CN',
     distractionFreeMode: false,
     // 默认: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token
