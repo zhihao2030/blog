@@ -18,13 +18,15 @@
 <script setup>
 import usePageList from "./hooks/usePageList";
 import {onMounted} from "vue";
+import {useCommonStore} from "../../store/modules/common";
 
 const {pagination,pageChange,pageData} = usePageList()
-
+const commonStore = useCommonStore()
 // initPage
 // 想要用window或bom方法事件，一定要在mounted后执行
 onMounted(()=>{
   pageChange()
+  commonStore.setLoading(false)
 })
 </script>
 <style scoped lang="scss">
