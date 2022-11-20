@@ -20,12 +20,9 @@ const props = defineProps({
 // 初始化评论组件配置
 const { page } = useData()
 
-const getKey = () => {
-  return  Date.now().toString(36) + page.relativePath
-}
-
-
-const gitalk = new Gitalk({
+// 渲染评论组件
+onMounted(() => {
+  const gitalk = new Gitalk({
     clientID: 'd8f5b34416d403c173d9',
     clientSecret: '43b8e42adec815a50860c7f67c3fa5e57851d480',
     repo: 'comment',
@@ -37,10 +34,6 @@ const gitalk = new Gitalk({
     // 默认: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token
     proxy: '/github/login/oauth/access_token'
   })
-
-
-// 渲染评论组件
-onMounted(() => {
     gitalk.render('comment-container')
 
     // 如果点赞，先判断有没有登录
