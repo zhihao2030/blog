@@ -1,8 +1,8 @@
 {
-  "index_name": "acp_linesno",
+  "index_name": "BLOG",
   "start_urls": [
     {
-      "url": "https://alinesno-platform.linesno.com/",
+      "url": "https://1270001.xyz/",
       "selectors_key": "v2",
       "tags": [
         "v2"
