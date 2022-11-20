@@ -13,16 +13,17 @@
   "selectors": {
     "v2": {
       "lvl0": {
-        "selector": ".VPSidebarGroup.collapsible",
+        "selector": ".VPSidebarGroup.collapsible .card-item-wrap.title",
         "global": true,
         "default_value": "Documentation"
       },
-      "lvl1": ".VPContent  h1",
-      "lvl2": ".VPContent  h2",
-      "lvl3": ".VPContent  h3",
-      "lvl4": ".VPContent  h4",
-      "lvl5": ".VPContent  h5",
-      "text": ".tVPContent p, .VPContent li",
+      "lvl1": ".content-container  h1",
+      "lvl2": ".content-container  h2",
+      "lvl3": ".content-container  h3",
+      "lvl4": ".content-container  h4",
+      "lvl5": ".content-container  h5",
+      "lvl6": ".content-container  h5",
+      "text": ".content-container p, .content-container li",
       "lang": {
         "selector": "/html/@lang",
         "type": "xpath",
