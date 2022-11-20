@@ -25,7 +25,10 @@ export default defineConfig({
     algolia: {
       appId: '7CZ8QMJF3N',
       apiKey: 'a2e2b4b5b8a5a6577ce22b876cd4f8df',
-      indexName: 'BLOG'
+      indexName: 'BLOG',
+      searchParameters: {
+        facetFilters: ['tags:v2'],
+      },
     },
     authorInfo: {
       author: 'ZzH'

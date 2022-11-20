@@ -17,12 +17,12 @@
         "global": true,
         "default_value": "Documentation"
       },
-      "lvl1": ".theme-default-content h1",
-      "lvl2": ".theme-default-content h2",
-      "lvl3": ".theme-default-content h3",
-      "lvl4": ".theme-default-content h4",
-      "lvl5": ".theme-default-content h5",
-      "text": ".theme-default-content p, .theme-default-content li",
+      "lvl1": ".VPContent  h1",
+      "lvl2": ".VPContent  h2",
+      "lvl3": ".VPContent  h3",
+      "lvl4": ".VPContent  h4",
+      "lvl5": ".VPContent  h5",
+      "text": ".tVPContent p, .VPContent li",
       "lang": {
         "selector": "/html/@lang",
         "type": "xpath",
@@ -37,6 +37,6 @@
       "lang",
       "tags"
     ]
-  },
-  "nb_hits": 6366
+  }
+//  "nb_hits": 6366
 }
