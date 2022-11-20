@@ -13,7 +13,7 @@
   "selectors": {
     "v2": {
       "lvl0": {
-        "selector": ".sidebar-heading.active",
+        "selector": ".VPSidebarGroup.collapsible",
         "global": true,
         "default_value": "Documentation"
       },
@@ -38,5 +38,4 @@
       "tags"
     ]
   }
-//  "nb_hits": 6366
 }
