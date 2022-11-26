@@ -10,7 +10,9 @@
               :class="{ 'active': currentTag === subItem.tagName }"
               @click.stop="handleSelectTag(subItem)"
           >{{subItem.tagName}}
+             <span class="blog-num">{{subItem.num || ''}}</span>
           </span>
+
       </div>
       <div class="tag-page">
         <list-item v-for="page in blogsList" :key="page.path" class="blog" :page="page" :currentTag="currentTag" />
@@ -54,6 +56,9 @@ console.log(blogsList)
         transform: scale(1.4);
         font-weight: 700;
         margin: 4px 14px 10px;
+      }
+      .blog-num {
+        font-size: 12px;
       }
     }
   }

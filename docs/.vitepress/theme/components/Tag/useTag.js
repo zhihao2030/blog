@@ -35,7 +35,8 @@ export default function useTag() {
             const tag = {
                 tagName: key,
                 blogs: value,
-                color: getOneColor()
+                color: getOneColor(),
+                num: (value || []).length
             }
             resolvedTagList.value.push(tag)
         }
