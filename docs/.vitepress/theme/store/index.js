@@ -1,5 +1,8 @@
 import { createPinia } from 'pinia'
+import piniaPluginPersist from 'pinia-plugin-persist'
 
 export default function setupStore(app) {
-  app.use(createPinia())
+  const store = createPinia()
+  store.use(piniaPluginPersist)
+  app.use(store)
 }

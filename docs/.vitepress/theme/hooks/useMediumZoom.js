@@ -18,7 +18,6 @@ export default function useMediumZoom () {
     })
 
     onMounted(()=>{
-        console.log(444)
         mediumZoom('[data-zoomable]', {
             margin: 24,
             background: 'rgba(25, 18, 25, 0.9)',

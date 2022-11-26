@@ -1,8 +1,10 @@
 ---
-title: 我的标签
+title: 标签
 aside: false
 editLink: false
 lastUpdated: false
 showComment: false
 ---
-777
+<ClientOnly>
+	<Tag />
+</ClientOnly>

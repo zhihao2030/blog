@@ -29,7 +29,7 @@
           <div class="card-meta card-meta--tags" v-if="page.tags && page.tags.length">
             <tags-outlined style="margin-right: 0.25em" />
             <div class="tags">
-              <a :href="`/tags?key=${tag}`" v-for="tag in page.tags">
+              <a :href="`/tags?key=${tag}`" v-for="tag in page.tags" :class="{'current-tag': currentTag === tag }">
                 {{tag}}
               </a>
             </div>
@@ -47,6 +47,10 @@ const props = defineProps({
   page: {
     type: Object,
     default: () => ({})
+  },
+  currentTag: {
+    type: String,
+    default: ''
   }
 })
 </script>

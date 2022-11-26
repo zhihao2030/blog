@@ -17,8 +17,8 @@
 </template>
 <script setup>
 import usePageList from "./hooks/usePageList";
-import {onMounted} from "vue";
-import {useCommonStore} from "../../store/modules/common";
+import { onMounted } from "vue";
+import { useCommonStore } from "../../store/modules/common";
 
 const {pagination,pageChange,pageData} = usePageList()
 const commonStore = useCommonStore()

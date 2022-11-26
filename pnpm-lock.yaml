@@ -15,6 +15,7 @@ importers:
       markdown-it: ^13.0.1
       moment: ^2.29.4
       pinia: ^2.0.24
+      pinia-plugin-persist: ^1.0.0
       remove-markdown: ^0.5.0
       sass: ^1.56.1
       sitemap: ^7.1.1
@@ -32,6 +33,7 @@ importers:
       jquery: registry.npmmirror.com/jquery/3.6.1
       moment: registry.npmmirror.com/moment/2.29.4
       pinia: registry.npmmirror.com/pinia/2.0.24_vue@3.2.45
+      pinia-plugin-persist: registry.npmmirror.com/pinia-plugin-persist/1.0.0_pinia@2.0.24+vue@3.2.45
       vitepress-plugin-search: registry.npmmirror.com/vitepress-plugin-search/1.0.4-alpha.15_fy7kgbi6ghowo3zvdbspf5kkae
     devDependencies:
       fast-glob: registry.npmmirror.com/fast-glob/3.2.12
@@ -9375,6 +9377,24 @@ packages:
     version: 2.3.1
     engines: {node: '>=8.6'}
 
+  registry.npmmirror.com/pinia-plugin-persist/1.0.0_pinia@2.0.24+vue@3.2.45:
+    resolution: {integrity: sha512-M4hBBd8fz/GgNmUPaaUsC29y1M09lqbXrMAHcusVoU8xlQi1TqgkWnnhvMikZwr7Le/hVyMx8KUcumGGrR6GVw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/pinia-plugin-persist/-/pinia-plugin-persist-1.0.0.tgz}
+    id: registry.npmmirror.com/pinia-plugin-persist/1.0.0
+    name: pinia-plugin-persist
+    version: 1.0.0
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0
+      pinia: ^2.0.0
+      vue: ^2.0.0 || >=3.0.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      pinia: registry.npmmirror.com/pinia/2.0.24_vue@3.2.45
+      vue: registry.npmmirror.com/vue/3.2.45
+      vue-demi: registry.npmmirror.com/vue-demi/0.12.5_vue@3.2.45
+    dev: false
+
   registry.npmmirror.com/pinia/2.0.24_vue@3.2.45:
     resolution: {integrity: sha512-DDLd4Iphyc+6PYYYbx7jkb6WP9gecgu9bz9huyB5rb7CdJI3DhzYiZI+/Ih8MLewRrP9DSpslF/BgSNrJtZU7A==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/pinia/-/pinia-2.0.24.tgz}
     id: registry.npmmirror.com/pinia/2.0.24
@@ -9880,6 +9900,24 @@ packages:
     resolution: {integrity: sha512-gu73tuZfJgu+mvCSy4UZwd2JXykjK9zAZsfmDeut5dx/1a7FeTk0XwJsSuqQn+cuMCGVbIBfl+s53X4T19DnzQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vscode-textmate/-/vscode-textmate-6.0.0.tgz}
     name: vscode-textmate
     version: 6.0.0
+
+  registry.npmmirror.com/vue-demi/0.12.5_vue@3.2.45:
+    resolution: {integrity: sha512-BREuTgTYlUr0zw0EZn3hnhC3I6gPWv+Kwh4MCih6QcAeaTlaIX0DwOVN0wHej7hSvDPecz4jygy/idsgKfW58Q==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-demi/-/vue-demi-0.12.5.tgz}
+    id: registry.npmmirror.com/vue-demi/0.12.5
+    name: vue-demi
+    version: 0.12.5
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: registry.npmmirror.com/vue/3.2.45
+    dev: false
 
   registry.npmmirror.com/vue-demi/0.13.11_vue@3.2.45:
     resolution: {integrity: sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-demi/-/vue-demi-0.13.11.tgz}
