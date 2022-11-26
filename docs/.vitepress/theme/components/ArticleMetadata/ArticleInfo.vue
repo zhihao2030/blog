@@ -31,7 +31,7 @@
       </span>
       <span class="meta-content">
         <span v-for="(tag, index) in tags" :key="index">
-          <a href="javascript:void(0);" @click="goToLink('/tags', 'key', tag)" target="_self" :title="tag">{{ tag }}</a>
+          <a :href="`/tags?key=${tag}`" :title="tag">{{ tag }}</a>
           <span v-if="index != tags.length - 1">, </span>
         </span>
       </span>
