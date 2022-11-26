@@ -53,6 +53,7 @@ export default function useTag() {
     })
 
     watch(()=>currentTag.value,(tag)=>{
+        console.log(tag,8888)
         if (tag) handleBlogs()
     })
 
