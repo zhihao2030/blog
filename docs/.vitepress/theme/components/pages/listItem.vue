@@ -29,7 +29,7 @@
           <div class="card-meta card-meta--tags" v-if="page.tags && page.tags.length">
             <tags-outlined style="margin-right: 0.25em" />
             <div class="tags">
-              <a :href="`/tags?key=${tag}`" v-for="tag in page.tags" :class="{'current-tag': currentTag === tag }">
+              <a :href="`/tags?key=${tag}`" @click="emits('update:currentTag',tag)" v-for="tag in page.tags" :class="{'current-tag': currentTag === tag }">
                 {{tag}}
               </a>
             </div>
@@ -53,6 +53,8 @@ const props = defineProps({
     default: ''
   }
 })
+
+const emits = defineEmits(['update:currentTag'])
 </script>
 
 <style scoped lang="scss">

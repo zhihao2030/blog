@@ -15,7 +15,7 @@
 
       </div>
       <div class="tag-page">
-        <list-item v-for="page in blogsList" :key="page.path" class="blog" :page="page" :currentTag="currentTag" />
+        <list-item v-for="page in blogsList" :key="page.path" class="blog" :page="page" v-model:currentTag="currentTag" />
       </div>
     </div>
   </div>
@@ -24,10 +24,8 @@
 <script setup>
 import useTag from './useTag'
 
-
 const { currentTag, handleSelectTag,resolvedTagList,blogsList } = useTag()
 
-console.log(blogsList)
 </script>
 
 <style lang="scss" scoped>
