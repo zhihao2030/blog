@@ -272,7 +272,6 @@ export function formatDate(date) {
   * moment(values.data).format('YYYY-MM-DD HH:mm:ss')--------------24小时
     moment(values.data).format('YYYY-MM-DD hh:mm:ss')--------------12小时
   * */
-  console.log( moment(date).format('YYYY-MM-DD HH:mm:ss'))
   return moment(date).utc().format('YYYY-MM-DD HH:mm:ss')
 }
 

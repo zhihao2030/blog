@@ -11,6 +11,11 @@ const navConfig =  [
         link: '/tags',
         activeMatch: '/tags'
     },
+    {
+        text: '归档',
+        link: '/archives',
+        activeMatch: '/archives'
+    },
 ]
 
 export default navConfig
