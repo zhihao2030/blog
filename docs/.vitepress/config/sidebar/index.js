@@ -1,16 +1,18 @@
 const sidebarConfig = {
-    '/BUGS/': [
+    '/summary/': [
         {
             text: '遇到的问题',
             items: [
 
-                { text: 'iframe 打开全屏无效', link: '/BUGS/problems/iframe 打开全屏无效' },
+                { text: 'moment.js 时间格式化-时区问题', link: '/summary/problem/moment.js 时间格式化-时区问题' },
+                { text: '文件下载处理', link: '/summary/problem/文件下载处理' },
             ],
         },
         {
-            text: '未分类',
+            text: '总结',
             items: [
-                { text: '远程组件加载方案', link: '/BUGS/远程组件加载方案' },
+                { text: 'tree的相互转换', link: '/summary/log/tree的相互转换' },
+                { text: 'Vue3开发总结-01', link: '/BUGS//log/Vue3开发总结-01' },
             ],
         }
     ],
