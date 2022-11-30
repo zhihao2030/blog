@@ -41,41 +41,28 @@ const sidebarConfig = {
                 { text: 'nginx 代理', link: '/devops/nginx/proxy' },
             ],
         },
-    ],
-
-    '/network-protocol/': [
-        {
-            text: 'Awsome',
-            collapsible: true,
-            items: [
-                { text: 'DNS', link: '/network-protocol/dns' },
-                { text: 'CDN', link: '/network-protocol/cdn' },
-                { text: '网络模型', link: '/network-protocol/01.网络模型' },
-            ],
-        },
         {
             text: 'TCP',
             collapsible: true,
             items: [
-                { text: 'tcp报文', link: '/network-protocol/02.tcp报文' },
-                { text: 'tcp三次握手', link: '/network-protocol/03.tcp三次握手' },
-                { text: 'tcp四次挥手', link: '/network-protocol/04.tcp四次挥手' },
-                { text: 'tcp中syn攻击', link: '/network-protocol/05.tcp中syn攻击' },
-                { text: 'tcp和udp的区别', link: '/network-protocol/06.tcp和udp的区别' },
+                { text: 'tcp报文', link: '/devops/02.tcp报文' },
+                { text: 'tcp三次握手', link: '/devops/03.tcp三次握手' },
+                { text: 'tcp四次挥手', link: '/devops/04.tcp四次挥手' },
+                { text: 'tcp中syn攻击', link: '/devops/05.tcp中syn攻击' },
+                { text: 'tcp和udp的区别', link: '/devops/06.tcp和udp的区别' },
             ],
         },
-
         {
             text: 'HTTP',
             collapsible: true,
             items: [
-                { text: 'http报文结构', link: '/network-protocol/07.http报文结构' },
-                { text: 'http的请求方法', link: '/network-protocol/08.http的请求方法' },
-                { text: 'http状态码', link: '/network-protocol/09.http状态码' },
-                { text: 'http请求体和请求头', link: '/network-protocol/10.http请求体和请求头' },
-                { text: 'cookie', link: '/network-protocol/11.cookie' },
-                { text: 'http优缺点', link: '/network-protocol/12.http优缺点' },
-                { text: 'http队头阻塞', link: '/network-protocol/13.http队头阻塞' },
+                { text: 'http报文结构', link: '/devops/07.http报文结构' },
+                { text: 'http的请求方法', link: '/devops/08.http的请求方法' },
+                { text: 'http状态码', link: '/devops/09.http状态码' },
+                { text: 'http请求体和请求头', link: '/devops/10.http请求体和请求头' },
+                { text: 'cookie', link: '/devops/11.cookie' },
+                { text: 'http优缺点', link: '/devops/12.http优缺点' },
+                { text: 'http队头阻塞', link: '/devops/13.http队头阻塞' },
             ],
         },
         {

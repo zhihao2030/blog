@@ -19,3 +19,4 @@ description: -
 `
 
 await fs.writeFile('../template.md',str)
+console.log('end')
