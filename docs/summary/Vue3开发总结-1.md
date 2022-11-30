@@ -1,0 +1,206 @@
+---
+title: Vue3开发总结-1
+date: 2022-11-30 12:07:47
+sidebar: auto
+author: Zzh
+tags:
+  - Vue3
+categories:
+  - 总结
+description: 目前项目的开发基本全转向Vue3，抽时间对Vue3相关生态开发过程中的问题和方法进行总结
+---
+
+# Vue3开发总结-1
+::: 前言
+目前项目的开发基本全转向Vue3，抽时间对Vue3相关生态开发过程中的问题和方法进行总结
+:::
+
+## Vue3开发使用的相关生态
+* **Vue3**
+* Vite
+* VueRouter
+* Pinia
+* Pinia-plugin-persistedstate
+* ElementPlus
+* Echarts
+* unplugin-auto-import （Vue，Pinia等相关API的自动引入）
+* unplugin-vue-components （ElementPlus 组件的按需引入）
+* vite-plugin-vue-setup-extend
+* mitt
+
+## Vue3的使用
+目前习惯使用script-setup模式
+### 生命周期
+**Vue2**
+![](https://cdn.jsdelivr.net/gh/zhihao2030/note-img@main/20221130122510.png)
+
+**Vue3**
+![](https://cdn.jsdelivr.net/gh/zhihao2030/note-img@main/20221130122609.png)
+#### 区别
+```javascript
+beforeCreate  ->  setup()
+created       ->  setup()
+beforeMount   ->  onBeforeMount
+mounted       ->  onMounted
+beforeUpdate  ->  onBeforeUpdate
+updated       ->  onUpdated
+beforeDestroy ->  onBeforeUnmount
+destroyed     ->  onUnmounted
+activated     ->  onActivated
+deactivated   ->  onDeactivated
+errorCaptured ->  onErrorCaptured
+```
+### 组件数据传递
+#### defineProps
+子组件接收父组件传递的props
+```javascript
+const props = defineProps({
+            status: {
+                type: String,
+                default: '',
+            },
+            ruleListData: {
+                type: Array,
+                default: () => [],
+            }    
+        });
+```
+#### defineEmits
+子组件接收父组件传递的自定义事件
+```javascript
+// 父 传递
+<child @close='handleClose' />
+
+// 子 接收
+const eimts = defineEmits(['close'])
+// 子 触发
+eimts('close',params)
+```
+#### defineExpose
+子组件向外暴露属性，方法，在父组件中可通过ref获取
+```javascript
+// 语法 params: {key:value}
+defineExpose(params)
+```
+::: danger 注意
+defineExpose，defineEmits，defineProps 只能在setup环境下使用
+:::
+
+### 全局变量设置
+这是对 Vue 2 中 Vue.prototype 使用方式的一种替代，此写法在 Vue 3 已经不存在了
+#### Vue3
+```javascript
+const app = createApp(App);
+app.config.globalProperties.$key = xxx
+```
+::: tip 提示
+如果**全局属性与组件**自己的属性**冲突**，**组件**自己的属性将具有更高的优先级。
+:::
+
+### v-model的变化
+v-model实际上 v-bind 和 v-on 组合的语法糖，
+
+#### Vue2
+##### 表单元素使用
+实际上 父向子传递名为value的props，名为input的自定义事件
+```javascript
+<input type="text" v-model="value" />
+// 实际上 父向子传递名为value的props，名为input的自定义事件
+<input type="text" :value="value" @input="value=$event.target.value" />
+```
+##### 组件使用
+```javascript
+// 子组件 child.vue
+<template>
+  <div class="child">
+    <p>value: {{ value }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+    props: ['value'],
+    methods: {
+        handleValueChange() {
+            /*当value发生变化，通过 input自定义事件通知父组件更新value
+            * 实现双向绑定
+            * */
+            this.$emit('input', v)
+        }   
+    }
+};
+</script>
+
+```
+```javascript
+<template>
+  <div id="app">
+    <Child v-model="value" />
+  </div>
+</template>
+
+<script>
+import xxx
+export default {
+  components: {
+    Child
+  },
+  data() {
+    return {
+      value: "",
+    };
+  },
+};
+</script>
+```
+#### Vue3中的变化
+为了让 v-model 更好的针对多个属性进行双向绑定，Vue3 作出了以下修改：
+
+1. 当对自定义组件使用 v-model 指令时，绑定的**默认属性名**由原来的 value 变为 modelValue，**事件名**由原来的 input 变为 update:modelValue
+2. 去掉了 ~~.sync~~ 修饰符，它原本的功能由 v-model 的参数替代
+3. 移除~~model~~ 配置
+
+**例子**
+```javascript
+// 父组件
+<template>
+    <my-modal v-model:show='show' />
+</template>    
+<script setup>
+    const show = ref(false)
+</script>
+
+
+// 子组件 my-modal.vue
+
+<template>
+    <el-modal v-model:show='visible' />
+</template>
+<script setup>
+    const props = defineProps({
+        show: {
+            type: Boolean,
+            default: fasle,
+        }
+    });
+    const eimts = defineEmits(['update:show'])
+    
+    const visible = computed({
+                        get() {
+                                return props.show
+                             },
+                        set(value) {
+                                eimts('update:show',value)  
+                            }
+                })
+</script>
+```
+
+::: tip 提示
+一般的表单元素使用 v-model 并无变化，变化的就只是对组件的双向数据绑定，就是将 v-model 和 .sync 结合
+:::
+
+### 全局异常提示
+Vue3.x 报错信息不是很清楚，添加全局异常处理器，更清晰的输出错误内容和调用栈信息
+![](https://cdn.jsdelivr.net/gh/zhihao2030/note-img@main/20221130133541.png)
+
