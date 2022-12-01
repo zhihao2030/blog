@@ -19,6 +19,7 @@ vite使用总结
 
 ::: warning 相关插件
 自动导入unplugin-auto-import
+按需引入unplugin-vue-components
 :::
 ### 安装
 ```
