@@ -163,7 +163,7 @@ export default defineConfig((env) => {
       proxy: {
         '/bd-profile/': {
           // 本地 8000 前端代码的接口 代理到 8888 的服务端口
-          target: 'http://192.168.129.184:8090/',
+          target: 'http://xxxx:8090/',
           changeOrigin: true, // 允许跨域
           // rewrite: (path) => path.replace('/api/', '/'),
         },
