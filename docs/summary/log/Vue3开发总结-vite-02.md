@@ -11,8 +11,8 @@ description: vite使用总结
 ---
 
 # Vue3开发总结-vite-02
-::: 前言
-vite使用总结
+::: tip 前言
+vite使用相关总结
 :::
 
 ## 函数和组件库的自动按需导入
