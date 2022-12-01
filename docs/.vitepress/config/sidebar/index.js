@@ -13,6 +13,7 @@ const sidebarConfig = {
             items: [
                 { text: 'tree的相互转换', link: '/summary/log/tree的相互转换' },
                 { text: 'Vue3开发总结-01', link: '/summary/log/Vue3开发总结-01' },
+                { text: 'Vue3开发总结-vite-02', link: '/summary/log/Vue3开发总结-vite-02' },
             ],
         }
     ],
