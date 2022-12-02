@@ -37,12 +37,18 @@
       </span>
     </div>
   </div>
+  <div class="meta-item content-info" v-if="contentInfo.readTime && showTime">
+    <span>约{{contentInfo.fontNum}}字，</span>
+    <span>预计阅读{{contentInfo.readTime}}分钟 </span>
+  </div>
 </template>
 
 <script  setup>
-import { reactive, toRefs } from 'vue'
+import { reactive, toRefs,computed } from 'vue'
 import { useData } from 'vitepress'
 import {formatDate,goToLink} from '../../helpers/utils'
+import { useReadInfo } from "../../store/modules/readInfo";
+import {storeToRefs } from 'pinia'
 
 // 定义文章属性
 const props = defineProps({
@@ -54,9 +60,14 @@ const props = defineProps({
   showTags: {
     type: Boolean,
     default: true
-  }
+  },
+  showTime: {
+    type: Boolean,
+    default: true
+  },
 })
 
+const { readInfoList } = storeToRefs(useReadInfo())
 const { theme } = useData()
 const data = reactive({
   author: props.article?.author ?? theme.value.authorInfo.author,
@@ -64,9 +75,15 @@ const data = reactive({
   categories: props.article?.categories ?? [],
   tags: props.article?.tags ?? [],
   showCategory: props.showCategory,
-  showTags: props.showTags
+  showTags: props.showTags,
+  title: props.article?.title
 })
-const { author, authorLink, date, toDate, categories, tags, showTags, showCategory } = toRefs(data)
+
+const { author, authorLink, date, categories, tags,title } = toRefs(data)
+
+const contentInfo = computed(()=>{
+  return readInfoList.value.get(title.value)
+})
 </script>
 
 <style scoped>
@@ -110,5 +127,12 @@ const { author, authorLink, date, toDate, categories, tags, showTags, showCatego
 }
 .meta-content a:hover {
   color: var(--vp-c-brand);
+}
+.content-info {
+  /*display: flex;*/
+  /*//justify-content: end;*/
+  max-width: 100%;
+  margin-top: 7px;
+  font-size: 13px;
 }
 </style>

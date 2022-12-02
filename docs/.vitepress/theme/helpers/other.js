@@ -85,3 +85,12 @@ export function initTags(articleData) {
   }
   return tags
 }
+
+export const filterReadInfo = (pageData) => {
+  console.log()
+  const readInfo = new Map()
+  pageData.forEach((page)=>{
+    readInfo.set(page.title,page.pageInfo)
+  })
+  return readInfo
+}

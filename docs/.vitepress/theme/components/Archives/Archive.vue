@@ -27,7 +27,7 @@
                 <span v-for="article in articles" class="article">
                     <a-timeline-item :dot-color="getOneColor()">
                        <a class="article-title"  :href="article.path">{{article.title}}</a>
-                      <ArticleInfo  class="blog" :article="article" :showCategory="false" :showTags="false"/>
+                      <ArticleInfo :showTime="false"  class="blog" :article="article" :showCategory="false" :showTags="false"/>
                    </a-timeline-item>
                 </span>
               </div>
