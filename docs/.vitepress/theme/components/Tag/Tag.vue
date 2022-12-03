@@ -37,7 +37,7 @@ const { currentTag, handleSelectTag,resolvedTagList,blogsList } = useTag()
     .tag-item {
       vertical-align: middle;
       margin: 4px 4px 10px;
-      padding: 4px 8px;
+      padding: 5px 10px;
       display: inline-block;
       cursor: pointer;
       border-radius: 0.25rem;

@@ -4,6 +4,7 @@ import myLayout from './myLayout.vue'
 import registerPlugin from './plugin'
 import { initTags,filterReadInfo } from './helpers/other'
 import './styles/commom.css'
+import './styles/reset.scss'
 import setupStore from './store'
 import { useReadInfoOut } from './store/modules/readInfo'
 
