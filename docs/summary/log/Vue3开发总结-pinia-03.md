@@ -34,7 +34,7 @@ Pinia从使用角度和之前的Vuex一样。
 ## 使用
 
 ### 目录结构
-![](https://cdn.jsdelivr.net/gh/zhihao2030/note-img@main/20221202172116.png)
+<a-image src="https://cdn.jsdelivr.net/gh/zhihao2030/note-img@main/20221202172116.png" />
 
 ```javascript
 // /store/index.js

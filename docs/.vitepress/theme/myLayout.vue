@@ -29,7 +29,7 @@ const commonStore = useCommonStore()
 const { showToTop } = useHideToTop()
 
 
-useMediumZoom()
+//useMediumZoom()
 
 </script>
 
