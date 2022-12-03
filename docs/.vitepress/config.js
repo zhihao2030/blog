@@ -10,7 +10,7 @@ import selfPlugin from './config/selfPlugin'
 export default defineConfig({
   title: "Zzh's note",
   description: '~',
-  lastUpdated: true,
+  lastUpdated: false,
   base: '/',
   lang: 'zh-CN',
   //cleanUrls: 'without-subfolders',
