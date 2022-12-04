@@ -2,7 +2,7 @@
   <div id="comment-container"></div>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import {  onMounted } from 'vue'
 import { useData } from 'vitepress'
 import { Message } from '@arco-design/web-vue'

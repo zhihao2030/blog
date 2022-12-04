@@ -8,7 +8,6 @@ export const useCommonStore = defineStore('common', {
   },
   actions: {
       setLoading(v) {
-          console.log(v,8888)
         this.loading =v
       }
   }

@@ -2,9 +2,7 @@
   <page-list />
 </template>
 
-<script>export default {
-  components: {}
-}
+<script>
 </script>
 
 <style scoped>

@@ -87,7 +87,6 @@ const sidebarConfig = {
             ],
         },
     ],
-
     '/javascript/': [
         {
             text: '基础知识',
@@ -117,6 +116,15 @@ const sidebarConfig = {
             ],
         },
     ],
+    '/note/vueDesign/': [
+        {
+            text: '框架设计概览',
+            items: [
+                { text: '[01]权衡的艺术', link: '/note/vueDesign/01/01.权衡的艺术' },
+            ]
+        }
+
+    ]
 }
 
 export default sidebarConfig

@@ -13,9 +13,9 @@
   <a-back-top v-if="showToTop" />
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import DefaultTheme from 'vitepress/theme'
-import useMediumZoom from './hooks/useMediumZoom.js'
+//import useMediumZoom from './hooks/useMediumZoom.js'
 import {useData} from "vitepress";
 import {useCommonStore} from './store/modules/common'
 import useHideToTop from './hooks/useHideToTop'
