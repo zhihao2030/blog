@@ -109,6 +109,7 @@ const sidebarConfig = {
                 { text: 'JavaScript 代码的执行流程', link: '/javascript/v8/run-js' },
                 { text: '什么是执行上下文栈？', link: '/javascript/v8/context-stack' },
                 { text: '什么是作用域？', link: '/javascript/v8/scope' },
+                { text: '闭包？', link: '/javascript/v8/scope' },
                 { text: '变量在作用域链上怎么查找？', link: '/javascript/v8/scope-chain' },
                 { text: '谈一谈 v8 的垃圾回收机制？', link: '/javascript/v8/gc' },
                 { text: 'V8 是如何执行 JavaScript 的？', link: '/javascript/v8/compile' },
