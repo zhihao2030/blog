@@ -1,23 +1,10 @@
-const sidebarConfig = {
-    '/summary/': [
-        {
-            text: '遇到的问题',
-            items: [
+import fastGlob from 'fast-glob'
+import matter from 'gray-matter'
 
-                { text: 'moment.js 时间格式化-时区问题', link: '/summary/problem/moment.js 时间格式化-时区问题' },
-                { text: '文件下载处理', link: '/summary/problem/文件下载处理' },
-            ],
-        },
-        {
-            text: '总结',
-            items: [
-                { text: 'tree的相互转换', link: '/summary/log/tree的相互转换' },
-                { text: 'Vue3开发总结-01', link: '/summary/log/Vue3开发总结-01' },
-                { text: 'Vue3开发总结-vite-02', link: '/summary/log/Vue3开发总结-vite-02' },
-                { text: 'Vue3开发总结-pinia-03', link: '/summary/log/Vue3开发总结-pinia-03' },
-            ],
-        }
-    ],
+const { sync } = fastGlob;
+
+const sidebarConfig = {
+    '/summary/': getSideItems('/summary/'),
     '/devops/': [
         {
             text: '持续集成',
@@ -117,15 +104,36 @@ const sidebarConfig = {
             ],
         },
     ],
-    '/note/vueDesign/': [
-        {
-            text: '框架设计概览',
-            items: [
-                { text: '[01]权衡的艺术', link: '/note/vueDesign/01/01.权衡的艺术' },
-            ]
-        }
-
-    ]
+    '/note/vueDesign/': getSideItems('/note/vueDesign/')
+}
+function getSideItems(path) {
+    const side = []
+    const rootPath = path
+    // 1.获取所有目录
+    sync(`docs${path}*`, {
+        onlyDirectories: true,
+        objectMode: true
+    }).forEach(({ name:dirName }) => {
+        const sideText = dirName
+        const sideItems = []
+        sync(`docs${path}${dirName}/*`, {
+            onlyFiles: true,
+            objectMode: true
+        }).forEach((article) => {
+           const { name } = article
+            const articleFile = matter.read(`${article.path}`)
+            const { data } = articleFile
+            sideItems.push({
+                text: data.title,
+                link: `${path}${dirName}/${name.replace('.md','')}`
+            })
+        })
+        side.push({
+            text: sideText,
+            items: sideItems
+        })
+    })
+    return side
 }
 
 export default sidebarConfig
