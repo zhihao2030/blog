@@ -2,11 +2,13 @@
 title: eval 和 new Function 的区别
 date: 2022-05-10 10:12:22
 sidebar: auto
+author: Zzh
 tags:
   - eval
 categories:
   - Javascript
 ---
+# eval 和 new Function 的区别
 
 `eval` 和 `new Function` 都可以动态解析和执行字符串。但是它们对解析内容的运行环境判定不同。
 

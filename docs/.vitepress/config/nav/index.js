@@ -4,7 +4,7 @@ const navConfig =  [
     {
         text: '笔记',
         items: [
-            { text: 'Vue.js设计与实现', link: '/note/vueDesign/index', activeMatch: '/note/vueDesign/' },
+            { text: 'Vue.js设计与实现', link: '/note/vueDesign/框架设计概览/01.权衡的艺术', activeMatch: '/note/vueDesign/' },
             { text: 'Vue', link: '/note/vue/index', activeMatch: '/note/vue/' },
             { text: 'React', link: '/note/react/index', activeMatch: '/note/react/' },
         ],
