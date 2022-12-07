@@ -1,7 +1,6 @@
 import data from '../../../article-data.json'
 import Theme from 'vitepress/theme'
 import myLayout from './myLayout.vue'
-import registerPlugin from './plugin'
 import { initTags,filterReadInfo } from './helpers/other'
 import './styles/commom.css'
 import './styles/reset.scss'

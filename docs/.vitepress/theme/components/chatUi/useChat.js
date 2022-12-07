@@ -11,7 +11,7 @@ export default function useChat() {
     const handleSend = async () => {
         show.value = true
         try {
-           const response = await fetch(`https://1270001.xyz/openAi/chat?msg=${inputValue.value}`)
+           const response = await fetch(`/openAi/chat?msg=${inputValue.value}`)
             let {data,flag,msg} = await response.json();
             show.value = false
             if (msg) return Message.error(msg)
