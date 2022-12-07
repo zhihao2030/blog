@@ -51,3 +51,4 @@ var requestFullScreen = function (element) {
   }
 };
 ```
+<setSession />  

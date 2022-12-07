@@ -1,6 +1,10 @@
 const navConfig =  [
     { text: '首页', link: '/'},
-
+    {
+        text: 'ChatGPT',
+        link: '/ChatGPT',
+        activeMatch: '/ChatGPT'
+    },
     {
         text: '笔记',
         items: [

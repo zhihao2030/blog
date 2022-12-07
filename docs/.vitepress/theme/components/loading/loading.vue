@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <div class="circle-loader">
+    <div class="circle-loader" :class="[position ? 'circle-loader-position': '']">
       <div class="circle-line">
         <div class="circle circle-blue"></div>
         <div class="circle circle-blue"></div>
@@ -25,10 +25,13 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "loading"
-}
+<script setup>
+defineProps({
+  position: {
+    type: Boolean,
+    default: true
+  }
+})
 </script>
 
 <style scoped>
@@ -102,17 +105,20 @@ body {
   display: block;
   width: 64px;
   height: 64px;
-  margin-left: -32px;
-  margin-top: -32px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
+  margin: auto;
   -webkit-transform-origin: 16px 16px;
   transform-origin: 16px 16px;
   -webkit-animation: rotate-animation 5s infinite;
   animation: rotate-animation 5s infinite;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
+}
+.circle-loader-position {
+  margin-left: -32px;
+  margin-top: -32px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
 }
 .circle-loader .circle {
   -webkit-animation: move-animation 2.5s infinite;
