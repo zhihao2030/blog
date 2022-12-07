@@ -6,6 +6,7 @@ export default function registerPlugin(app) {
             console.log(result)
             //const name = result[1];
             const plugin = modules[path];
+            console.log(plugin)
             app.use(plugin)
         }
     }

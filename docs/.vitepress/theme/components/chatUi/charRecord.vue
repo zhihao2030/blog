@@ -1,15 +1,16 @@
 <template>
   <div class="char-record">
   <template v-for="(record, index) in list" :key="index">
-    <div class="chat-item">
+    <div class="chat-item" :id="`chat-item-${index}`">
       <a-card hoverable>
         <div class="flex-box">
-          <span class="avatar"><UserOutlined /></span>
+          <div class="avatar"><UserOutlined /></div>
           <div class="content">{{record.user}}</div>
         </div>
-        <div class="flex-box" :style="{color: '#000'}">
-          <span class="avatar"><icon /></span>
-          <div class="content">{{record.openAi}}</div>
+        <a-divider />
+        <div class="flex-box">
+          <div :style="{display:'flex',justifyContent:'end',width: '100%'}"><icon /></div>
+          <v-md-preview :text="record.openAi"></v-md-preview>
         </div>
       </a-card>
     </div>
@@ -30,17 +31,19 @@ import {UserOutlined} from '@ant-design/icons-vue'
 
 <style scoped lang="scss">
 .flex-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
+  //flex-direction: column;
   margin-bottom: 10px;
 }
 .flex-box .avatar {
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   margin-right: 16px;
   color: var(--color-text-2);
   font-size: 16px;
@@ -49,11 +52,16 @@ import {UserOutlined} from '@ant-design/icons-vue'
 }
 .flex-box .content {
   flex: 1;
-  color: var(--color-text-2);
-  font-size: 12px;
+  color: var(--vp-c-text-1);
+  font-size: 16px;
   line-height: 20px;
+  font-weight: 600;
 }
 .chat-item {
   margin-bottom: 15px;
+}
+:deep(.vuepress-markdown-body:not(.custom)) {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 </style>

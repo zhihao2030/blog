@@ -10,7 +10,7 @@ const articleData = await Promise.all(
     glob.sync('./docs/**/*.md', {
         onlyFiles: true,
         objectMode: true,
-        ignore: ['./docs/**/index.md', './docs/**/tags.md', './docs/**/archives.md', './docs/**/me.md'], // without !
+        ignore: ['./docs/**/index.md', './docs/**/tags.md', './docs/**/archives.md', './docs/**/me.md', './docs/**/ChatGPT.md'], // without !
     }).map(async (article) => {
         const file = matter.read(`${article.path}`,{
             excerpt: true,

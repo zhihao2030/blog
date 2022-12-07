@@ -1,5 +1,6 @@
-import {ref} from "vue";
+import {nextTick, ref} from "vue";
 import { Message } from '@arco-design/web-vue';
+import hljs from "highlight.js";
 
 export default function useChat() {
     const recordList = ref([])
@@ -10,14 +11,17 @@ export default function useChat() {
     const handleSend = async () => {
         show.value = true
         try {
-           const response = await fetch(`/openAi/chat?msg=${inputValue.value}`)
+           const response = await fetch(`https://1270001.xyz/openAi/chat?msg=${inputValue.value}`)
             let {data,flag,msg} = await response.json();
             show.value = false
             if (msg) return Message.error(msg)
             currentChat.value.user = inputValue.value
+            console.log(data.currentChat)
             currentChat.value.openAi = data.currentChat
+            console.log(currentChat.value.openAi)
             recordList.value.push(currentChat.value)
             currentChat.value = {}
+            scrollToCur()
         } catch(e) {
             show.value = false
             Message.error('未知错误')
@@ -28,6 +32,17 @@ export default function useChat() {
           return
       }
       handleSend()
+    }
+
+    const scrollToCur = () => {
+        nextTick(()=> {
+            document.getElementById(`chat-item-${recordList.value.length - 1}`).scrollIntoView({
+                behavior: 'smooth',
+                inline: 'nearest',
+                block: 'nearest'
+            })
+            hljs.highlightAll();
+        })
     }
     return {
         recordList,

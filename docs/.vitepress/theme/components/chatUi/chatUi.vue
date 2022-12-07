@@ -1,11 +1,11 @@
 <template>
   <div class="chat-ui">
-    <charRecord v-show="!show" :list="recordList" />
+    <charRecord :list="recordList" />
     <loading :position="false" v-show="show" />
     <div class="chat-input">
-      <a-input v-model="inputValue" placeholder="Please enter something" allow-clear :loading="show">
+      <a-input v-model="inputValue" placeholder="Please enter something" allow-clear @press-enter="send" :loading="show">
         <template #suffix>
-          <a-button type="text" shape="circle" @click="send">
+          <a-button type="text" shape="circle" @click="send" :loading="show">
             <SendOutlined />
           </a-button>
         </template>
