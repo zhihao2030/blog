@@ -8,6 +8,7 @@ categories:
   - Javascript
 ---
 
+# 继承
 `javascript` 的继承是基于原型链上的继承，通过 `__proto__` 和 `prototype` 来模拟实现了这个概念。
 
 ## prototype 继承

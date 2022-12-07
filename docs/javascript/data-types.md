@@ -1,16 +1,15 @@
 ---
-title: 隐式转换
-date: 2019-07-15 13:00:28
+title: 数据类型
+date: 2020-07-15 13:00:28
 sidebar: 'auto'
+author: zzh
 tags:
   - Javascript
 categories:
   - Javascript
 ---
 
-<!-- <tree :data='[]' /> -->
-
-## 数据类型
+# 数据类型
 
 - 基本数据类型：`undefined`、`null`、`boolean`、`string`、`number`、`symbol`
 - 引用类型：`Object`、`Array`、`Date`、`RegExp`、`Function`
