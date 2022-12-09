@@ -3,7 +3,14 @@
     <charRecord :list="recordList" />
     <loading :position="false" v-show="show" />
     <div class="chat-input">
-      <a-input v-model="inputValue" ref="inputRef" placeholder="Please enter something" allow-clear @press-enter="send" :loading="show">
+      <a-input
+          v-model="inputValue"
+          :autosize="{ minRows: 1, maxRows: 6 }"
+          type="textarea"
+          ref="inputRef"
+          placeholder="Please enter something"
+          allow-clear @press-enter="send"
+          :loading="show">
         <template #suffix>
           <a-button type="text" shape="circle" @click="send" :loading="show">
             <SendOutlined />
