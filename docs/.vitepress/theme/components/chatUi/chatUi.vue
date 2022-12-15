@@ -24,7 +24,6 @@
 <script setup>
 import {SendOutlined} from '@ant-design/icons-vue'
 import useChat from './useChat'
-
 const { recordList, send, inputValue, show } = useChat()
 </script>
 
