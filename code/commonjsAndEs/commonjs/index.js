@@ -1,5 +1,4 @@
-const a = require('./moduleA')
-console.log(a)
+
 /*
 在 commonjs 中每一个 js 文件都是一个单独的模块，我们可以称之为 module；
 该模块中，包含 CommonJS 规范的核心变量: exports、module.exports、require；
@@ -16,3 +15,17 @@ module.exports，exports，require 三者是如何工作的？又有什么关系
 *
 * https://juejin.cn/post/6994224541312483336#heading-6
 * */
+
+
+// main.js
+let counter = require('./moduleA').counter;
+let incCounter = require('./moduleA').incCounter;
+let obj = require('./moduleA').obj;
+
+console.log(counter);  // 3
+counter = 100
+console.log(obj);  // { a: 1 }
+incCounter();
+console.log(counter); // 100
+console.log(obj);  // { a: 10 }
+

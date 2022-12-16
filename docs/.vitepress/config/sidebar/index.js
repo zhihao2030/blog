@@ -104,7 +104,8 @@ const sidebarConfig = {
             ],
         },
     ],
-    '/note/vueDesign/': getSideItems('/note/vueDesign/')
+    '/note/vueDesign/': getSideItems('/note/vueDesign/'),
+    '/daily/': getSideItems('/daily/'),
 }
 function getSideItems(path) {
     const side = []
