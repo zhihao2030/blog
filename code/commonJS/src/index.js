@@ -15,7 +15,6 @@ Module._cacheModule = {};
 /** 模块加载 */
 Module._load = function(filePath) {
   let fileName = Module._resolveFilename(filePath); // 文件路径解析
-
   // 判断缓存中是否有该模块
   if (Module._cacheModule[fileName]) {
     return Module._cacheModule[fileName].exports;
