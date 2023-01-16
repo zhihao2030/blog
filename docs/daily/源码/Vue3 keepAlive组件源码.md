@@ -17,19 +17,7 @@ description: KeepAlive组件是Vue中的内置组件，主要用于保留组件�
 
 ## 1. 基本用法
 
-<keep-alive :include="['a', 'b']" :max="10">
-  <component :is="view"></component>
-</keep-alive>
-
-<keep-alive :include="['a', 'b']" :max="10">
-  <component :is="view"></component>
-</keep-alive>
-
-<keep-alive :include="['a', 'b']" :max="10">
-  <component :is="view"></component>
-</keep-alive>
-
-```js
+```vue
 <keep-alive :include="['a', 'b']" :max="10">
   <component :is="view"></component>
 </keep-alive>
