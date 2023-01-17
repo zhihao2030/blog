@@ -1,5 +1,5 @@
 ---
-title: keepAlive多开复用路由组件缓存问题
+title: keepAlive复用路由组件缓存问题
 date: 2023-01-02 19:16:19
 sidebar: auto
 author: Zzh
@@ -62,7 +62,7 @@ keepAliveList，在关闭页面时移出keepAliveList
   const handleClose = (tab, index) => {
     const tabs = tabStore.tableList[index - 1];
     tabStore.tableList.splice(index, 1);
-    keepAliveStore.removeKeepAlive('/edit');
+    keepAliveStore.removeKeepAlive('edit');
     // 关闭页面移出keepalive
     router.push(tabs.path);
   };
