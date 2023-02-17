@@ -20,6 +20,7 @@ const send = async () =>{
     let {data,flag,msg} = await response.json();
     Message.error(msg)
   } catch(e) {
+    console.log(e)
     Message.error('未知错误')
   }
 }
