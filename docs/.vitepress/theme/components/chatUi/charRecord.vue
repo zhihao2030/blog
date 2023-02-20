@@ -10,7 +10,7 @@
         <a-divider />
         <div class="flex-box">
           <div :style="{display:'flex',justifyContent:'end',width: '100%'}"><icon /></div>
-          <v-md-preview :text="record.openAi"></v-md-preview>
+          <mavon-editor defaultOpen="preview" :subfield="false" :editable="false"  v-model="record.openAi" :toolbarsFlag="false" :boxShadow="false"></mavon-editor>
         </div>
       </a-card>
     </div>

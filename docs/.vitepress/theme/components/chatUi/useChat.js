@@ -1,6 +1,5 @@
 import {nextTick, ref} from "vue";
 import { Message } from '@arco-design/web-vue';
-import hljs from "highlight.js";
 
 export default function useChat() {
     const recordList = ref([])
@@ -8,7 +7,6 @@ export default function useChat() {
     const show = ref(false)
     const currentChat = ref({})
     const inputRef = ref(null)
-
     const handleSend = async () => {
         show.value = true
         try {
@@ -44,7 +42,6 @@ export default function useChat() {
                 inline: 'nearest',
                 block: 'nearest'
             })
-            hljs.highlightAll();
         })
     }
     return {

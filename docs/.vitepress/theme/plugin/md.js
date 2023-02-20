@@ -1,3 +1,4 @@
+/*
 import VMdPreview from '@kangc/v-md-editor/lib/preview';
 import '@kangc/v-md-editor/lib/style/preview.css';
 import vuepressTheme from '@kangc/v-md-editor/lib/theme/vuepress.js';
@@ -25,3 +26,10 @@ export default function setMd(app) {
     app.use(VMdPreview)
 }
 
+*/
+
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
+export default function setMd(app) {
+    app.use(mavonEditor)
+}
