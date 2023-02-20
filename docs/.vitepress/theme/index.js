@@ -12,7 +12,7 @@ export default {
     ...Theme,
     Layout: myLayout,
     enhanceApp({app,router}) {
-        setMd(app)
+        window && setMd(app)
         setupStore(app)
         app.config.globalProperties.$pages = JSON.stringify(data)
         app.config.globalProperties.$tags = JSON.stringify(initTags(data))
