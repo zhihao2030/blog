@@ -9,8 +9,8 @@
         </div>
         <a-divider />
         <div class="flex-box">
-          <div :style="{display:'flex',justifyContent:'end',width: '100%'}"><icon /></div>
-          <mavon-editor defaultOpen="preview" :subfield="false" :editable="false"  v-model="record.openAi" :toolbarsFlag="false" :boxShadow="false"></mavon-editor>
+          <div :style="{display:'flex',justifyContent:'end',width: '100%',marginBottom: '10px'}"><icon /></div>
+          <renderMd :content="record.openAi" />
         </div>
       </a-card>
     </div>
@@ -20,6 +20,7 @@
 </template>
 
 <script setup>
+import 'github-markdown-css/github-markdown-dark.css'
 import {UserOutlined} from '@ant-design/icons-vue'
   const props = defineProps({
     list: {
