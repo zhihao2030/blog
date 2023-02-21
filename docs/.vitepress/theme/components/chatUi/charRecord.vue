@@ -20,7 +20,7 @@
 </template>
 
 <script setup>
-import 'github-markdown-css/github-markdown-dark.css'
+import 'github-markdown-css/github-markdown.css'
 import {UserOutlined} from '@ant-design/icons-vue'
   const props = defineProps({
     list: {
