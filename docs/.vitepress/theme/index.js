@@ -6,13 +6,12 @@ import './styles/commom.css'
 import './styles/reset.scss'
 import setupStore from './store'
 import { useReadInfoOut } from './store/modules/readInfo'
-import setMd from './plugin/md'
+
 
 export default {
     ...Theme,
     Layout: myLayout,
     enhanceApp({app,router}) {
-        setMd(app)
         setupStore(app)
         app.config.globalProperties.$pages = JSON.stringify(data)
         app.config.globalProperties.$tags = JSON.stringify(initTags(data))
