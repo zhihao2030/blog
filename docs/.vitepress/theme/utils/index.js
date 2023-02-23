@@ -30,7 +30,7 @@ export function createFingerprint (domain) { // 生成浏览器指纹
     let crc = bin2hex(bin.slice(-16, -12))
     fingerprint = crc
     window.document.cookie= 'webPoint'+ '=' + fingerprint
-    setCookie(webPoint,fingerprint,1)
+    setCookie('webPoint',fingerprint,1)
     return fingerprint
 }
 export function getCookie(key){
