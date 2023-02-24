@@ -8,6 +8,8 @@ export default function useChat() {
         Notification.info({
             title: '提示',
             content: '朋友们，请求太多了，暂时维护，请6点后再来~~',
+            duration: 3000000,
+            closable: true
         })
     }
     const recordList = ref([])
