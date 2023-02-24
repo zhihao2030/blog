@@ -27,7 +27,7 @@ export default function useChat() {
         } catch(e) {
             console.log(e)
             show.value = false
-            Message.error('未知错误')
+            Message.error('chatGpt响应超时，请重试！')
         }
     }
     const send = () => {
