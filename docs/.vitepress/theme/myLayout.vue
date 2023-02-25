@@ -22,6 +22,7 @@ import useHideToTop from './hooks/useHideToTop'
 import {watch, ref} from "vue";
 import ChatComment from "./components/chatComment.vue";
 import useNotify from "./hooks/useNotify";
+import './utils/setTheme.js'
 
 
 const { page, theme, frontmatter } = useData()
@@ -46,7 +47,6 @@ watch(()=>route.path,(v)=>{
 }, {immediate: true})
 
 //useMediumZoom()
-
 </script>
 
 <style scoped>
