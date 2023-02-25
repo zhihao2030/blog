@@ -5,6 +5,7 @@ import {createFingerprint, getCookie} from "../../utils";
 
 export default function useChat() {
 
+    const showTip = ref(true)
     const recordList = ref([])
     const inputValue = ref(null)
     const show = ref(false)
@@ -12,6 +13,7 @@ export default function useChat() {
     const inputRef = ref(null)
     const user =getCookie('webPoint') || createFingerprint()
     const handleSend = async () => {
+        showTip.value && (showTip.value = false)
         show.value = true
         try {
            const response = await fetch(`/openAi/chat?msg=${inputValue.value}&user=${user}`)
@@ -53,5 +55,6 @@ export default function useChat() {
         show,
         send,
         inputValue,
+        showTip,
     }
 }

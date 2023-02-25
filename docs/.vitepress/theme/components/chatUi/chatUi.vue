@@ -1,6 +1,6 @@
 <template>
   <div class="chat-ui">
-    <div class="tip">
+    <div class="tip" v-if="showTip">
       <a-alert closable title="提示">
         <p>本网站通过调用chatGpt的API，实现免登陆可使用</p>
         <span class="title">存在的问题：</span>
@@ -20,8 +20,8 @@
           ref="inputRef"
           :disabled="show"
           placeholder="Please enter something"
-          allow-clear @press-enter="send"
-          :loading="show">
+          allow-clear
+          @keydown.enter="send">
         <template #suffix>
           <a-button size="medium" type="text" shape="circle" @click="send" :loading="show">
             <SendOutlined style="font-size: 18px"/>
@@ -35,7 +35,7 @@
 <script setup>
 import {SendOutlined} from '@ant-design/icons-vue'
 import useChat from './useChat'
-const { recordList, send, inputValue, show } = useChat()
+const { recordList, send, inputValue, show,showTip } = useChat()
 
 </script>
 
