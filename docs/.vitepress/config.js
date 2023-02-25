@@ -16,6 +16,7 @@ export default defineConfig({
   //cleanUrls: 'without-subfolders',
   head: headConfig,
   markdown: markdownConfig,
+  appearance: false,
   themeConfig: {
     siteTitle: `ZzH's Log`,
     outlineTitle: '目录', // 右侧边栏的大纲标题文本配置
