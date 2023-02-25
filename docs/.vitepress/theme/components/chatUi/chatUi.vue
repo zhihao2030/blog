@@ -23,7 +23,7 @@
           allow-clear
           @keydown.enter="send">
         <template #suffix>
-          <a-button size="medium" type="text" shape="circle" @click="send" :loading="show">
+          <a-button size="medium" type="text" shape="circle" @click="send" >
             <SendOutlined style="font-size: 18px"/>
           </a-button>
         </template>
