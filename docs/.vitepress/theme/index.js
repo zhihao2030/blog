@@ -6,7 +6,7 @@ import './styles/commom.css'
 import './styles/reset.scss'
 import setupStore from './store'
 import { useReadInfoOut } from './store/modules/readInfo'
-
+import '@arco-design/web-vue/dist/arco.css';
 
 export default {
     ...Theme,
