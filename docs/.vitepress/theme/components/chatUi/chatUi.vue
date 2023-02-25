@@ -1,7 +1,5 @@
 <template>
   <div class="chat-ui">
-    <charRecord :list="recordList" />
-    <loading :position="false" v-show="show" />
     <div class="tip">
       <a-alert closable title="提示">
         <p>本网站通过调用chatGpt的API，实现免登陆可使用</p>
@@ -12,6 +10,8 @@
         <p>4. 其他功能还在实现中...</p>
       </a-alert>
     </div>
+    <charRecord :list="recordList" />
+    <loading :position="false" v-show="show" />
     <div class="chat-input">
       <a-textarea
           v-model="inputValue"

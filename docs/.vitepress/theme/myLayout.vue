@@ -21,24 +21,14 @@ import {useCommonStore} from './store/modules/common'
 import useHideToTop from './hooks/useHideToTop'
 import {watch, ref} from "vue";
 import ChatComment from "./components/chatComment.vue";
-import {Notification} from '@arco-design/web-vue'
+import useNotify from "./hooks/useNotify";
+
 
 const { page, theme, frontmatter } = useData()
 const route = useRoute()
+const {handleMessage,cloneNotify} = useNotify()
 const showGptComment = ref(false)
-const handleMessage = ()=> {
-    Notification.info({
-      title: '提示',
-      content: '朋友们，请求太多了，暂时维护，请6点后再来~~',
-      position: "topLeft",
-      duration: 3000000,
-      closable: true
-    })
-}
-watch(()=>route.path,(v)=>{
-  showGptComment.value = v === '/ChatGPT.html'
-  // handleMessage()
-})
+
 const getKey = () => {
  return  Date.now().toString(36) + page.relativePath
 }
@@ -46,6 +36,14 @@ const { Layout } = DefaultTheme
 const commonStore = useCommonStore()
 const { showToTop } = useHideToTop()
 
+watch(()=>route.path,(v)=>{
+  if(v === '/ChatGPT.html'){
+    showGptComment.value = v
+    handleMessage()
+  } else {
+    cloneNotify()
+  }
+}, {immediate: true})
 
 //useMediumZoom()
 
