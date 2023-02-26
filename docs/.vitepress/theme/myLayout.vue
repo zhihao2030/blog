@@ -7,7 +7,7 @@
       </template>
       <template #doc-after>
         <Comment v-if="(theme.commentConfig?.showComment ?? true) && (frontmatter?.showComment ?? true)" :commentConfig="theme.commentConfig" :key="getKey()" />
-        <ChatComment v-if="false" />
+        <ChatComment v-if="showGptComment" />
       </template>
     </Layout>
   </div>
@@ -19,8 +19,8 @@ import DefaultTheme from 'vitepress/theme'
 import {useData,useRoute} from "vitepress";
 import {useCommonStore} from './store/modules/common'
 import useHideToTop from './hooks/useHideToTop'
-import {watch, ref, onMounted} from "vue";
-import ChatComment from "./components/chatComment.vue";
+import {watch, ref, onMounted, nextTick} from "vue";
+import ChatComment from "./components/chatComment/chatComment.vue";
 import useNotify from "./hooks/useNotify";
 import './utils/setTheme.js'
 import setTheme from "./utils/setTheme";
@@ -42,10 +42,23 @@ watch(()=>route.path,(v)=>{
   if(v === '/ChatGPT.html'){
     showGptComment.value = v
     handleMessage()
+    setPadding(true)
   } else {
     cloneNotify()
+    setPadding(false)
   }
 }, {immediate: true})
+
+
+function setPadding(flag) {
+    nextTick(()=>{
+      const VPDoc = document.querySelector('.VPDoc .container .content')
+      console.log(VPDoc)
+      if (VPDoc) {
+        VPDoc.style.paddingBottom = flag ? '20px !important' : '128px !important'
+      }
+    })
+}
 
 onMounted(setTheme)
 

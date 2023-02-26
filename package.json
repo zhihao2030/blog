@@ -20,6 +20,7 @@
     "gray-matter": "^4.0.3",
     "highlightjs": "^9.16.2",
     "jquery": "^3.6.1",
+    "lodash-es": "^4.17.21",
     "moment": "^2.29.4",
     "pinia": "^2.0.24",
     "pinia-plugin-persistedstate": "^3.0.1",

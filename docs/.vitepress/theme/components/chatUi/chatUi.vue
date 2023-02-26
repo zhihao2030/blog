@@ -45,6 +45,7 @@ const { recordList, send, inputValue, show,showTip } = useChat()
     margin:auto;
     margin-top: 30px;
   }
+  margin-bottom: 200px;
 }
 p {
   margin: 0 !important;

@@ -56,3 +56,34 @@ export function setCookie(key,value,day){
 export function deleteCookie(key){
     setCookie(key,'',-1);   //时间设置为已经过期的时间,系统自然会删除
 }
+
+export function generateTree(
+    list,
+    { idName = "_id", parentIdName = "pid", childrenName = "children" } = {}
+) {
+    const tree = []
+    for (const node of list) {
+        // 无pid代表根节点
+        if (!node[parentIdName]) {
+            let temp = { ...node }
+            temp[childrenName] = findChildNode(temp[idName], list)
+            tree.push(temp)
+        }
+    }
+    function findChildNode(id, list) {
+        let children = []
+        for (const child of list) {
+            id === child[parentIdName] && children.push(child)
+        }
+
+        for (const child of children) {
+            const temp = findChildNode(child[idName], list)
+            if (temp.length) {
+                child[childrenName] = temp
+            }
+        }
+        return children
+    }
+
+    return tree
+}
