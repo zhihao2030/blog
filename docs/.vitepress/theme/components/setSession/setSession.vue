@@ -16,7 +16,7 @@ import {SendOutlined} from '@ant-design/icons-vue'
 const inputValue = ref(null)
 const send = async () =>{
   try {
-    const response = await fetch(`/checkComment?msg=${inputValue.value}`)
+    const response = await fetch(`/openAi/checkComment?msg=${inputValue.value}`)
     let {data,flag,msg} = await response.json();
     Message.success(msg)
   } catch(e) {
