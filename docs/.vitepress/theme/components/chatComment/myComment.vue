@@ -45,7 +45,7 @@ const {sendComment,handleClear} = useSendComment(list)
                   <a-input v-model="comment.inputValue" placeholder="请文明评论哦～" />
                 </template>
               </a-comment>
-              <a-collapse :bordered="comment.children && comment.children.length">
+              <a-collapse :bordered="false" v-if="comment.children && comment.children.length">
                 <a-collapse-item header="" :key="comment.id">
                   <MyComment :commentList="comment.children" />
                 </a-collapse-item>
