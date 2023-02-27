@@ -2,7 +2,9 @@
 import useComment from "./useComment.js";
 import MyComment from "./myComment.vue";
 import useSendComment from "./useSendComment";
+import {getCookie} from "../../utils";
 
+const username = getCookie('webPoint')
 
 const props = defineProps({
   commentList: Array
@@ -28,7 +30,7 @@ const {sendComment,handleClear} = useSendComment(list)
                 :datetime="comment.time"
             >
               <template #actions>
-                <span class="action" v-if="false" @click="comment.reply=!comment.reply "> <IconMessage /> Reply </span>
+                <span class="action" v-if="username !== 'zzh'" @click="comment.reply=!comment.reply "> <IconMessage /> Reply </span>
               </template>
               <a-comment
                   v-show="comment.reply"
@@ -43,7 +45,7 @@ const {sendComment,handleClear} = useSendComment(list)
                   <a-input v-model="comment.inputValue" placeholder="请文明评论哦～" />
                 </template>
               </a-comment>
-              <a-collapse :bordered="false" v-if="false">
+              <a-collapse :bordered="false" v-if="username !== 'zzh'">
                 <a-collapse-item header="" :key="comment.id">
                   <MyComment :commentList="comment.children" />
                 </a-collapse-item>

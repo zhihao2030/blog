@@ -22,6 +22,7 @@ export default function useSendComment(list) {
     }
 
     const sendComment = async (row) => {
+        if (['ea0dd646','4d0d52b5'].includes('name')) return
         const inputValue = row ? row.inputValue  : comment.value
         const {_id} = row || {}
         if (!inputValue) {
