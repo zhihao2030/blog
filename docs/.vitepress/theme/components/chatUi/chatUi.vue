@@ -2,7 +2,7 @@
   <div class="chat-ui">
     <div class="tip" v-if="showTip">
       <a-alert closable title="提示">
-        <p>本网站通过调用chatGpt的API，实现免登陆可使用</p>
+        <p>本网站通过调用chatGpt的API，实现免登陆可使用, 由于用的是aws免费的服务器，所以用的人多了会卡，本意是让大家免登录，免魔法可以试用，正在考虑对服务器进行升级</p>
         <span class="title">存在的问题：</span>
         <p>1. 由于是API的调用，再加上需要等待机器人回答完之后才会返回结果，所以问题的回答文字较多的时候响应会比较慢</p>
         <p>2. 晚上20点到24点网络比较拥挤，可能出现无响应的情况</p>
