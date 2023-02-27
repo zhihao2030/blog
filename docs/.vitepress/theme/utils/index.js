@@ -82,7 +82,7 @@ export function generateTree(
                 child[childrenName] = temp
             }
         }
-        return children
+        return children.filter(v=>v.display)
     }
 
     return tree

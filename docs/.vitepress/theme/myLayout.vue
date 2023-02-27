@@ -39,8 +39,8 @@ const commonStore = useCommonStore()
 const { showToTop } = useHideToTop()
 
 watch(()=>route.path,(v)=>{
+  showGptComment.value = v === '/ChatGPT.html'
   if(v === '/ChatGPT.html'){
-    showGptComment.value = v
     handleMessage()
     setPadding(true)
   } else {

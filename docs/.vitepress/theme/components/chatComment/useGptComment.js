@@ -11,7 +11,7 @@ export default function useGptComment() {
         const {data,code,msg} = await myRequest(`/comments`)
 
         if (code === 200) {
-           list.value = generateTree(data)
+           list.value = generateTree(data).filter(v=>v.display)
         }
     }
 onMounted(getCommentList)
