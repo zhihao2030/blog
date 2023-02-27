@@ -30,7 +30,7 @@ const {sendComment,handleClear} = useSendComment(list)
                 :datetime="comment.time"
             >
               <template #actions>
-                <span class="action" v-if="username !== 'zzh'" @click="comment.reply=!comment.reply "> <IconMessage /> Reply </span>
+                <span class="action" v-if="username === 'zzh'" @click="comment.reply=!comment.reply "> <IconMessage /> Reply </span>
               </template>
               <a-comment
                   v-show="comment.reply"
