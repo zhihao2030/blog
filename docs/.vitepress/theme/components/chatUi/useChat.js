@@ -26,12 +26,13 @@ export default function useChat() {
             recordList.value.push(currentChat.value)
             currentChat.value = {}
             inputValue.value = null
-            scrollToCur()
         } catch(e) {
             console.log(e)
             show.value = false
             Message.error('chatGpt响应超时，请重试！')
+            recordList.value.push({msg:'chatGpt响应超时，请重试！',type: 'error'})
         }
+        scrollToCur()
     }
     const send = () => {
       inputRef.value?.blur()

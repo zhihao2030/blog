@@ -1,7 +1,7 @@
 <template>
   <div class="char-record">
   <template v-for="(record, index) in list" :key="index">
-    <div class="chat-item" :id="`chat-item-${index}`">
+    <div class="chat-item" :id="`chat-item-${index}`" v-if="!record.type">
       <a-card hoverable>
         <div class="flex-box">
           <div class="avatar"><UserOutlined /></div>
@@ -14,7 +14,13 @@
         </div>
       </a-card>
     </div>
-
+    <div class="chat-item" v-else  :id="`chat-item-${index}`">
+      <a-card hoverable>
+        <a-typography-text type="danger">
+          {{record.msg}}
+        </a-typography-text>
+      </a-card>
+    </div>
   </template>
   </div>
 </template>

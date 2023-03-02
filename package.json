@@ -24,6 +24,7 @@
     "moment": "^2.29.4",
     "pinia": "^2.0.24",
     "pinia-plugin-persistedstate": "^3.0.1",
+    "uuid": "^9.0.0",
     "vitepress-plugin-search": "1.0.4-alpha.15"
   },
   "pnpm": {
