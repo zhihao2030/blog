@@ -13,6 +13,8 @@ head:
     content: chatGpt，openAi
 ---
 
-<ClientOnly>
-	<chatUi />
-</ClientOnly>
+[//]: # (<ClientOnly>)
+
+[//]: # (	<chatUi />)
+
+[//]: # (</ClientOnly>)

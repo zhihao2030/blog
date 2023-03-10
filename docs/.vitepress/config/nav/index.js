@@ -1,5 +1,5 @@
 const navConfig =  [
-    { text: 'ChatGpt', link: '/ChatGPT.html'},
+    //{ text: 'ChatGpt', link: '/ChatGPT.html'},
     { text: '首页', link: '/'},
     {
         text: '日常',
