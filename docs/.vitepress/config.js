@@ -13,7 +13,7 @@ export default defineConfig({
   lastUpdated: false,
   base: '/',
   lang: 'zh-CN',
-  cleanUrls: 'without-subfolders',
+  //cleanUrls: 'without-subfolders',
   head: headConfig,
   markdown: markdownConfig,
   appearance: false,
