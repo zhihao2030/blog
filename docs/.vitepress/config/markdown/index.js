@@ -1,7 +1,7 @@
 const markdownConfig = {
     // 所有主题参见: https://github.com/shikijs/shiki/blob/main/docs/themes.md
     theme: {
-        light: 'material-palenight',
+        light: 'min-light',
         dark: 'one-dark-pro'
     },
     // lineNumbers: true, // 启用行号

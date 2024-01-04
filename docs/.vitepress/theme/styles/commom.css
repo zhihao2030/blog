@@ -31,3 +31,7 @@ pre, code, kbd, samp {
 .VPContent {
   position: relative;
 }
+
+.VPNavBarMenuLink.active,.VPNavBarMenuGroup.active .text {
+  font-weight: 700;
+}
