@@ -8,8 +8,12 @@ import selfPlugin from './config/selfPlugin'
 
 // @ts-ignore
 export default defineConfig({
+  sitemap: {
+    hostname: 'https://1270001.xyz'
+  },
   title: "Zzh's note",
   description: '~',
+  cleanUrls: true,
   lastUpdated: false,
   base: '/',
   lang: 'zh-CN',
