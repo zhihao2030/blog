@@ -2,7 +2,7 @@ name: algolia-scraper
 
 on:
   workflow_run:
-    workflows: ['Deploy']
+    workflows: ['Publish Image']
     types:
       - completed
 
