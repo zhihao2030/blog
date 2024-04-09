@@ -1,0 +1,39 @@
+# docker compose 配置文件版本
+version: '3'
+
+# 定义运行的服务
+services:
+  # 服务1: 前端程序
+  z-blog:
+    # 定义使用的 Docker Image
+    image: ghcr.io/zhihao2030/z-blog:latest
+    # 定义容器重启策略，这里是除非手动停止，否则一直重启
+    restart: unless-stopped
+    # 这里没有定义暴露的端口，交给 Traefik 自动映射
+    # 定义容器运行的 labels，Traefik 会根据这些 labels 自动配置反向代理
+    labels:
+      - "traefik.enable=true"
+      # 定义前端程序的域名
+      - "traefik.http.routers.z-blog.rule=Host(`13.228.158.247`)"
+      - "traefik.http.routers.z-blog.tls=true"
+      - "traefik.http.routers.z-blog.tls.certresolver=myresolver"
+  # 后端程序的配置与前端
+  z-service:
+    image: ghcr.io/zhihao2030/z-service:latest
+    restart: unless-stopped
+    # 定义容器的环境变量
+    environment:
+      SALT: ""
+      API_PATH: "/api"
+    # 定义映射的文件，这里将本地的 database.db 映射到容器内的 /go/database.db
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.z-service.rule=Host(`13.228.158.247`) && PathPrefix(`/api`)"
+      - "traefik.http.routers.z-service.tls=true"
+      - "traefik.http.routers.z-service.tls.certresolver=myresolver"
+
+# 使用已存在的 traefik 的 network
+networks:
+  default:
+    external:
+      name: traefik_default
