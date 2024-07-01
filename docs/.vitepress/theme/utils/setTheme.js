@@ -1,4 +1,7 @@
 export default function setTheme() {
+    document.body.removeAttribute('arco-theme');
+    document.documentElement.classList.remove("dark")
+    return;
     const scheme = window.matchMedia('(prefers-color-scheme: dark)')
     console.log()
     if (!scheme) return
